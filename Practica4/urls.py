@@ -24,6 +24,6 @@ urlpatterns = [
     url(r'^home/', views.home),
     url(r'^persona/',include('Persona.urls')),
     url(r'^accounts/login/',LoginView.as_view(template_name="usuario/login.html"), name="login"),
-    url(r'^accounts/logout/',LogoutView.as_view(next_page="/home"))
+    url(r'^accounts/logout/',LogoutView.as_view(next_page="/home"), name="logout")
 ]
 #cisco123
