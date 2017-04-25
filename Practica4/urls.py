@@ -17,11 +17,13 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.views import LogoutView
+from Persona import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^home/', views.home),
     url(r'^persona/',include('Persona.urls')),
     url(r'^accounts/login/',LoginView.as_view(template_name="usuario/login.html"), name="login"),
-    url(r'^logout/',LogoutView.as_view(template_name="usuario/logout.html"))
+    url(r'^accounts/logout/',LogoutView.as_view(next_page="/home"))
 ]
 #cisco123
